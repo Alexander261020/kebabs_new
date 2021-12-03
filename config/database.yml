@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: kebabs_development
+  database: kebabs_dev
 
 test:
   <<: *default
