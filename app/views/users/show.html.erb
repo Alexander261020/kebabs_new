@@ -1,0 +1,26 @@
+<div class="text-center">
+  <h1><%= @user.name %></h1>
+    <%= image_tag asset_pack_path('media/images/user.jpg'),  size: "160x160" %>
+    <!--%= content_tag 'div', '', class: 'event-background',
+      style: "background-image: url(#{asset_pack_path('media/images/user.jpg')});
+        border: 1px solid black;" %-->
+
+  <% if @user == current_user %>
+    <p class="buffer-top">
+      <%= button_to 'Редактировать профиль', edit_user_path(@user), class: 'navbar-brand', method: :get %>
+    </p>
+  <% end %>
+
+    <div class="row">
+    <div class="col-md-12">
+      <% if @user.events.any? %>
+        <h3>Организовал:</h3>
+        <div class="row">
+          <%= render partial: 'events/event', collection: @user.events %>
+        </div>
+      <% else %>
+        <p class="buffer-top">Пользователь пока не организовал ни одного события</p>
+      <% end %>
+    </div>
+  </div>
+</div>
