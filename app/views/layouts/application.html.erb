@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kebabs</title>
+    <title>Bbq</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <%= button_to "BBQ!", root_path, method: :get, class: 'navbar-brand' %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item active">
+                  <%= button_to 'Профиль', current_user, method: :get, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= button_to 'Войти', new_user_session_path, class: 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= button_to 'Зарегистрироваться', new_user_registration_path, method: :get, class: 'nav-link' %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <% devise_flash %>
+        <% flash.each do |key, value| %>
+          <%= content_tag :div, value, id: "flash_#{key}", class: "alert alert-#{key}" %>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
