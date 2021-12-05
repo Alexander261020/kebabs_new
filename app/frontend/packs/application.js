@@ -1,5 +1,5 @@
 import Rails from "@rails/ujs"
-import "channels"
+// import "channels"
 Rails.start()
 
 import "../styles/application.scss"
