@@ -49,8 +49,8 @@
 
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key%>" id="win-message">
+            <button class="btn btn-close float-end" id="btn-close"></button>
             <%= value %>
-            <button class="btn-close float-end" id="btn-close"></button>
           </div>
         <% end %>
 
