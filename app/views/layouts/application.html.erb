@@ -16,7 +16,7 @@
     <div class="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <%= button_to "BBQ!", root_path, method: :get, class: 'navbar-brand' %>
+          <%= button_to t('app.name'), root_path, method: :get, class: 'navbar-brand' %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -56,6 +56,7 @@
         <% end %>
 
         <%= yield %>
+        <p>&copy; <%= t('app.company') %> 2018</p>
       </div>
     </div>
   </body>

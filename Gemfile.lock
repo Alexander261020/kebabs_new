@@ -72,6 +72,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.1)
+      devise (>= 4.8.0)
     erubi (1.10.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -133,6 +135,8 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     semantic_range (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -167,11 +171,13 @@ PLATFORMS
 DEPENDENCIES
   byebug
   devise
+  devise-i18n
   pg (~> 1.1)
   pony
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  russian
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5.0)

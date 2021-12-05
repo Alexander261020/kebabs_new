@@ -9,6 +9,8 @@ gem 'puma', '~> 5.0'
 gem 'webpacker', '~> 5.0'
 gem 'pony'
 gem 'devise'
+gem 'devise-i18n'
+gem 'russian'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
