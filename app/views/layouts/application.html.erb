@@ -47,7 +47,6 @@
     <div class="content">
       <div class="container">
 
-        <% devise_flash %>
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key%>" id="win-message">
             <%= value %>
