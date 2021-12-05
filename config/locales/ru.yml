@@ -3,30 +3,35 @@ ru:
   activerecord:
     # Перевод названия моделей
     models:
-      user: 'Пользователь'
-      event: 'Событие'
+      user: "Пользователь"
+      event: "Событие"
 
     # Перевод атрибутов моделей
     attributes:
       user:
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        email: "Email"
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
       event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
+        title: "Название"
+        address: "Место проведения"
+        datetime: "Дата и время"
+        description: "Описание"
 
   controllers:
     events:
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
-      destroyed: 'Вы удалили мероприятие :('
+      created: "Вы создали новое мероприятие"
+      updated: "Вы обновили мероприятие"
+      destroyed: "Вы удалили мероприятие :("
     users:
-      updated: 'Вы обновили свой профиль'
+      updated: "Вы обновили свой профиль"
 
   app:
-    name: 'Шашлыки'
-    company: 'Хороший программист'
+    name: "Шашлыки"
+    company: "Хороший программист"
+
+  error:
+    one: "%{count} ошибка"
+    few: "%{count} ошибки"
+    many: "%{count} ошибок"

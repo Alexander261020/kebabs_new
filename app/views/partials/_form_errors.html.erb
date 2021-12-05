@@ -1,11 +1,9 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
-  <div class="alert alert-danger">
-    <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
-    </div>
-
+  <div class="alert alert-error pb-0" id="win-message">
+  <div class="btn btn-close float-end" id="btn-close"></div>
+    <%= "У Вас #{I18n.t :error, count: errors.count} в форме:" %>
     <ul>
       <% errors.full_messages.each do |message| %>
         <li><%= message %></li>
