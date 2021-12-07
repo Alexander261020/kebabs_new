@@ -20,12 +20,12 @@
 
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-both d-inline-block mx-2">
-              <%= link_to 'Изменить', edit_event_path(@event),
+              <%= link_to t('message.change'), edit_event_path(@event),
                 class: 'btn btn-primary' %>
             </div>
 
             <div class="buffer-both d-inline-block mx-2">
-              <%= button_to 'Удалить событие', event_path(@event), method: :delete,
+              <%= button_to t('message.delete_event'), event_path(@event), method: :delete,
                 data: { confirm: t('message.are_you_sure') }, class: 'btn btn-danger' %>
             </div>
           <% end %>
@@ -37,11 +37,38 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-comments buffer-top">
+        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
-            collection: @event.comments %>
+            collection: @event.comments.except(@new_comment) %>
         </div>
       </div>
     </div>
+
+    <div class="col-md-4">
+      <div class="event-owner">
+        <h4>Зовет:</h4>
+          <p><%= render partial: 'users/user', object: @event.user %></p>
+      </div>
+      <div class="event-subscriptions">
+        <h4>Пойдут:</h4>
+        <div>
+          <p>
+          <%= render partial: 'subscriptions/subscription',
+            collection: @event.subscriptions.except(@new_subscription) %>
+          </p>
+        </div>
+      </div>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

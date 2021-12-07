@@ -1,14 +1,8 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <!--h2>
-      < %= I18n.t("errors.messages.not_saved",
-                 count: resource.errors.count,
-                 resource: resource.class.model_name.human.downcase)
-       % >
-    </h2-->
     <div class="alert alert-error pb-0" id="win-message">
     <div class="btn btn-close float-end" id="btn-close"></div>
-    <%= "У Вас #{I18n.t :error, count: resource.errors.count} в форме:" %>
+    <%= t('error.in_form', amount_error: "#{I18n.t :error, count: resource.errors.count}") %>
       <ul>
         <% resource.errors.each do |message| %>
           <li><%= message.full_message %></li>
