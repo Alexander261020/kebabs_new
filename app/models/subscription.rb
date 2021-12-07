@@ -1,6 +1,6 @@
 class Subscription < ActiveRecord::Base
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional: true
 
   # Обязательно должно быть событие
   validates :event, presence: true

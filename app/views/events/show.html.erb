@@ -61,7 +61,6 @@
       </div>
       <div class="event-subscription-form">
         <h4>Я пойду:</h4>
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         <div>
           <%= render partial: 'subscriptions/form', locals: {
             subscription: @new_subscription || @event.subscriptions.build
