@@ -35,6 +35,15 @@ ru:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
+    in_form: "У Вас %{amount_error} в форме:"
 
   message:
     are_you_sure: "Вы уверены?"
+    change: "Изменить"
+    change_password: "Сменить пароль"
+    delete_event: "Удалить событие"
+    create_event: "Создать событие"
+    save: "Сохранить"
+    save_password: "Сохранить пароль"
+    back: "Вернуться"
+    edit_profile: "Редактировать профиль"
