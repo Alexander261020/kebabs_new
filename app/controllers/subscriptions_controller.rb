@@ -8,6 +8,13 @@ class SubscriptionsController < ApplicationController
     # Болванка для новой подписки
     @new_subscription = @event.subscriptions.build(subscription_params)
 
+    # проверяем зарегистрирован ли данный email если пользователь не залогинен
+    if current_user.nil? && get_emails_users.include?(@new_subscription.user_email)
+      redirect_to @event, alert: I18n.t('controllers.subscriptions.dubl_email')
+      return
+    end
+
+    # если пользователь пытается подписаться на собственное событие
     if @event.user_id == current_user&.id
       redirect_to @event, alert: I18n.t('controllers.subscriptions.self_subscription')
       return
@@ -43,6 +50,10 @@ class SubscriptionsController < ApplicationController
   
   def set_event
     @event = Event.find(params[:event_id])
+  end
+
+  def get_emails_users
+    User.all.map(&:email)
   end
 
   # Only allow a list of trusted parameters through.
