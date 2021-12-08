@@ -51,7 +51,7 @@
           <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
+      <%= content_tag 'h4', 'Пойдут:' if @event.subscriptions.exists? %>
         <div>
           <p>
           <%= render partial: 'subscriptions/subscription',
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <% unless @event.user_id == current_user&.id %>
+      <% unless event_to_user? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>
