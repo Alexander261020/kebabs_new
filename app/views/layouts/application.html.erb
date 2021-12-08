@@ -16,7 +16,7 @@
     <div class="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <%= button_to t('app.name'), root_path, method: :get, class: 'navbar-brand' %>
+          <%= button_to t('app.name'), root_path, method: :get, class: 'navbar-brand button-nav-up' %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,17 +25,17 @@
             <ul class="navbar-nav">
               <% if user_signed_in? %>
                 <li class="nav-item active">
-                  <%= button_to 'Профиль', current_user, method: :get, class: 'nav-link' %>
+                  <%= button_to t("message.profile"), current_user, method: :get, class: 'nav-link button-nav-up' %>
                 </li>
                 <li class="nav-item">
-                  <%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+                  <%= button_to t("message.sing_out"), destroy_user_session_path, method: :delete, class: 'nav-link button-nav-up' %>
                 </li>
               <% else %>
                 <li class="nav-item">
-                  <%= button_to 'Войти', new_user_session_path, method: :get, class: 'nav-link' %>
+                  <%= button_to t("message.sing_in"),new_user_session_path, method: :get, class: 'nav-link button-nav-up' %>
                 </li>
                 <li class="nav-item">
-                  <%= button_to 'Зарегистрироваться', new_user_registration_path, method: :get, class: 'nav-link' %>
+                  <%= button_to t("message.sing_up"),new_user_registration_path, method: :get, class: 'nav-link button-nav-up' %>
                 </li>
               <% end %>
             </ul>

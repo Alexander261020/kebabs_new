@@ -51,7 +51,7 @@
           <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-      <%= content_tag 'h4', 'Пойдут:' if @event.subscriptions.exists? %>
+      <%= content_tag 'h4', t("message.go_to") if @event.subscriptions.exists? %>
         <div>
           <p>
           <%= render partial: 'subscriptions/subscription',
@@ -61,8 +61,8 @@
       </div>
 
       <% unless event_to_user? %>
-        <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
+        <div class="event-subscription-form border  border-dark rounded p-2" >
+        <%= content_tag 'h4', t("message.i_am_go") %>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build

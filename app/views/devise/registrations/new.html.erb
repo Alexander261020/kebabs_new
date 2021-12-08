@@ -1,7 +1,7 @@
 <%= devise_error_messages! %>
 
-<div style="" class="p-2 pb-0 col-6 border border-dark rounded">
-  <h2>Регистрация нового пользователя</h2>
+<div class="p-2 pb-0 col-6 border border-dark rounded">
+  <%= content_tag 'h2', t('in_form.reg_new_user') %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
     <div class="field">
@@ -10,20 +10,20 @@
     </div>
 
     <div class="field">
-      <%= f.label :password, content_tag( :span, "Пароль", class: "fw-bold d-inline-block") +
-        "(минимум #{@minimum_password_length} символов)" %>
+      <%= f.label :password, content_tag( :span, t('activerecord.attributes.user.password'),
+        class: "fw-bold d-inline-block") + t('in_form.min_symbols', symbols: @minimum_password_length) %>
       <% if @minimum_password_length %>
       <% end %>
       <%= f.password_field :password, autocomplete: "new-password", class: "col-12 mb-2" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation, "Повторите пароль", class: "fw-bold" %>
+      <%= f.label :password_confirmation,  t('activerecord.attributes.user.password_confirmation'), class: "fw-bold" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-12 mb-2" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Зарегистрироваться", class: 'btn-primary p-2 rounded' %>
+      <%= f.submit t('in_form.sing_up'), class: 'btn-primary p-2 rounded' %>
     </div>
   <% end %>
 

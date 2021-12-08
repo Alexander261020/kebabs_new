@@ -5,7 +5,6 @@ ru:
     models:
       user: "Пользователь"
       event: "Событие"
-
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -18,24 +17,30 @@ ru:
         address: "Место проведения"
         datetime: "Дата и время"
         description: "Описание"
+      subscription:
+        user_name: "Имя"
+        user_email: "Email"
 
   controllers:
     events:
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
       destroyed: "Вы удалили мероприятие :("
+      new_event: "Новое событие"
+      update: "Редактировать событие"
     users:
       updated: "Вы обновили свой профиль"
+      editing: "Редактирование профиля"
     comments:
-      destroyed: 'Комментарий удален'
-      created: 'Ваш комментарий добавлен'
-      error: 'Ошибка с комментарием'
+      destroyed: "Комментарий удален"
+      created: "Ваш комментарий добавлен"
+      error: "Ошибка с комментарием"
     subscriptions:
-      created: 'Вы подписаны на это событие'
-      destroyed: 'Участник отписан'
-      error: 'Подписка/отписка не сработала'
-      self_subscription: 'На собственные события не подписываются!'
-      dubl_email: 'Пользователь с таким email существует! Авторизируйтесь!'
+      created: "Вы подписаны на это событие"
+      destroyed: "Участник отписан"
+      error: "Подписка/отписка не сработала"
+      self_subscription: "На собственные события не подписываются!"
+      dubl_email: "Пользователь с таким email существует! Авторизируйтесь!"
 
   app:
     name: "Шашлыки"
@@ -57,11 +62,34 @@ ru:
     save_password: "Сохранить пароль"
     back: "Вернуться"
     edit_profile: "Редактировать профиль"
+    organization: "Организовал"
+    not_organization: "Пользователь пока не организовал ни одного события"
+    subscribe: "Подписаться"
+    profile: "Профиль"
+    sing_out: "Выйти"
+    sing_in: "Войти"
+    sing_up: "Зарегистрироваться"
+    go_to: "Пойдут:"
+    i_am_go: "Я пойду:"
 
   comments:
     comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      destroy_confirm: "Вы уверены, что хотите удалить этот комментарий?"
 
   subscriptions:
     subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      destroy_confirm: "Вы уверены, что хотите удалить эту подписку?"
+
+  in_form:
+    reg_new_user: "Регистрация нового пользователя"
+    min_symbols: "(минимум %{symbols} символов)"
+    sing_up: "Зарегистрироваться"
+    sing_in: "Авторизоваться"
+    remember: "Запомнить меня"
+    go_into: "Войти"
+    forgot_password: "Забыли пароль?"
+    restore_password: "Восстановление пароля"
+    send_instructions: "Сброс пароля"
+    leave_blank: "(оставьте пустым если не хотите менять)"
+    update: "Обновить"
+    cancel_account: "Закрыть аккаунт"
