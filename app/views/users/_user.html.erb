@@ -1,8 +1,10 @@
 <span class="user">
   <span class="user-avatar">
-    <%= image_tag asset_pack_path('media/images/user.jpg'),  size: "160x160" %>
+    <%= image_tag asset_pack_path('media/images/user.jpg'),  size: "160x160",
+      class: "border border-dark rounded" %>
   </span>
   <span class="user-name">
+
     <% if request.path == user_path(user) %>
       <%= user.name %>
     <% else %>

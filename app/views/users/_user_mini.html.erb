@@ -1,0 +1,14 @@
+<span class="user-mini">
+  <span class="user-avatar">
+    <%= image_tag asset_pack_path('media/images/user.jpg'),  size: "60x60",
+      class: "border border-dark rounded-circle" %>
+  </span>
+  <span class="user-name">
+
+    <% if request.path == user_path(user_mini) %>
+      <%= user_mini.name %>
+    <% else %>
+      <%= link_to user_mini.name, user_path(user_mini) %>
+    <% end %>
+  </span>
+</span>

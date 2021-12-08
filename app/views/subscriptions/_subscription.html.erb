@@ -1,15 +1,15 @@
-<span class="subscription">
+<div class="subscription mb-1">
   <% if subscription.user.present? %>
-    <%= render partial: 'users/user', object: subscription.user %>
+    <%= render partial: 'users/user_mini', object: subscription.user %>
   <% else %>
     <em><%= subscription.user_name %></em>
   <% end %>
   <% if current_user_can_edit?(subscription) %>
     <%= link_to(
-            fa_icon('times'),
+            fa_icon,
             event_subscription_path(subscription.event, subscription),
             method: :delete,
             data: {confirm: t('.destroy_confirm')}
         ) %>
   <% end %>
-<br></span>
+<br></div>

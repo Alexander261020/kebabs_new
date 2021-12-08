@@ -5,6 +5,8 @@ ru:
     models:
       user: "Пользователь"
       event: "Событие"
+      comment: "Комментарий"
+      subscription: "Подписка"
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -20,6 +22,8 @@ ru:
       subscription:
         user_name: "Имя"
         user_email: "Email"
+      comment:
+        body: "Текст сообщения"
 
   controllers:
     events:
@@ -71,6 +75,7 @@ ru:
     sing_up: "Зарегистрироваться"
     go_to: "Пойдут:"
     i_am_go: "Я пойду:"
+    back: "Вернуться"
 
   comments:
     comment:
@@ -93,3 +98,4 @@ ru:
     leave_blank: "(оставьте пустым если не хотите менять)"
     update: "Обновить"
     cancel_account: "Закрыть аккаунт"
+    send: "Отправить"

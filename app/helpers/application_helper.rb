@@ -3,7 +3,7 @@ module ApplicationHelper
     asset_path('user.jpg')
   end
 
-  def fa_icon(icon_class)
+  def fa_icon
     content_tag 'span', 'x', class: "btn fleat-end", aria: { hidden: true }
   end
 end
