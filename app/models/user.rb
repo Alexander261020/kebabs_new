@@ -1,12 +1,12 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   has_many :events
   has_many :comments, dependent: :destroy
   has_many :subscriptions
 
-  validates :name, presence: true, length: { minimum: 1, maximum: 25}
+  validates :name, presence: true, length: { minimum: 1, maximum: 25 }
 
   before_validation :set_name, on: :create
 
