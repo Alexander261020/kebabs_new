@@ -12,6 +12,11 @@
           <h3><small><%= l event.datetime, format: :short %></small></h3>
           <div class="buffer-both"><%= event.address %></div>
         </div>
+        <div>
+          <% event.visitors.each do |user| %>
+            <%= avatar_user_self(user, 30)%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

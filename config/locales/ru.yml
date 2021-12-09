@@ -7,6 +7,7 @@ ru:
       event: "Событие"
       comment: "Комментарий"
       subscription: "Подписка"
+      photo: 'Фотография'
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -14,6 +15,7 @@ ru:
         name: "Имя"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+        avatar: "Аватар"
       event:
         title: "Название"
         address: "Место проведения"
@@ -24,6 +26,8 @@ ru:
         user_email: "Email"
       comment:
         body: "Текст сообщения"
+      photo:
+        photo: 'Фотография'
 
   controllers:
     events:
@@ -45,6 +49,10 @@ ru:
       error: "Подписка/отписка не сработала"
       self_subscription: "На собственные события не подписываются!"
       dubl_email: "Пользователь с таким email существует! Авторизируйтесь!"
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   app:
     name: "Шашлыки"

@@ -1,7 +1,6 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
-    <%= image_tag asset_pack_path('media/images/user.jpg'),  size: "160x160",
-      class: "border border-dark rounded" %>
+  <%= avatar_user_self(@user, 160) %>
 
   <% if @user == current_user %>
     <p class="buffer-top">
