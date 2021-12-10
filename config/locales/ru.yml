@@ -84,6 +84,7 @@ ru:
     go_to: "Пойдут:"
     i_am_go: "Я пойду:"
     back: "Вернуться"
+    events: "События"
 
   comments:
     comment:
