@@ -7,7 +7,6 @@ class PhotosController < ApplicationController
   def create
     # Создаем новую фотографию у нужного события @event
     @new_photo = @event.photos.build(photo_params)
-
     # Проставляем у фотографии пользователя
     @new_photo.user = current_user
 
