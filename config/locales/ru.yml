@@ -94,6 +94,22 @@ ru:
     subscription:
       destroy_confirm: "Вы уверены, что хотите удалить эту подписку?"
 
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+
   in_form:
     reg_new_user: "Регистрация нового пользователя"
     min_symbols: "(минимум %{symbols} символов)"
