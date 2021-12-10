@@ -1,9 +1,8 @@
 <div class="buffer-bottom">
-  <p><%= comment.body %></p>
-  <p>
+  <p><%= comment.body %> |
     <span>
       <% if comment.user.present? %>
-        <%= render partial: 'users/user', object: comment.user %>
+        <%= render partial: 'users/user_mini', object: comment.user %>
       <% else %>
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>

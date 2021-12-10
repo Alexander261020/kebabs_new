@@ -1,4 +1,9 @@
 <div class="event-photo buffer-both">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+  <div class="d-inline-block">
+    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  </div>
+
+  <div class="d-inline-block">
+    Добавил <br><%= render partial: 'users/user_mini', object: photo.user %>
+  </div>
 </div>
