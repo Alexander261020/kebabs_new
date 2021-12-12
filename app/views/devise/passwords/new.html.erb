@@ -1,6 +1,8 @@
-<div style="" class="p-2 col-6 border border-dark rounded">
-  <h2><%= t('.forgot_your_password') %></h2>
-
+<div class="col-6 border border-dark rounded">
+  <div class="bg-gainsboro p-2 rounded-top">
+    <h2><%= t('.forgot_your_password') %></h2>
+  </div>
+  <div class="p-2">
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -13,4 +15,5 @@
       <%= f.submit t('.send_me_reset_password_instructions'), class: "btn btn-primary" %>
     </div>
   <% end %>
+  </div>
 </div>

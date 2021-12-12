@@ -1,9 +1,11 @@
 <%= devise_error_messages! %>
 
-<div class="p-2 pb-0 col-6 border border-dark rounded">
-  <%= content_tag 'h2', t('in_form.reg_new_user') %>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
+<div class="col-6 border border-dark rounded">
+  <div class="bg-gainsboro p-2 rounded-top">
+    <%= content_tag 'h2', t('in_form.reg_new_user') %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  </div>
+  <div class="p-2">
     <div class="field">
       <%= f.label :email, class: "fw-bold" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-12 mb-2" %>
@@ -26,6 +28,8 @@
       <%= f.submit t('in_form.sing_up'), class: 'btn-primary p-2 rounded' %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  </div>
+  <div class="bg-gainsboro p-2 rounded-bottom">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
