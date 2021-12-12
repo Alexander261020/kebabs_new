@@ -8,25 +8,13 @@ class SubscriptionsController < ApplicationController
     # Болванка для новой подписки
     @new_subscription = @event.subscriptions.build(subscription_params)
 
-    # проверяем зарегистрирован ли данный email если пользователь не залогинен
-    if current_user.nil? && helpers.email_exist?(@new_subscription.user_email)
-      redirect_to @event, alert: I18n.t('controllers.subscriptions.dubl_email')
-      return
-    end
-
-    # если пользователь пытается подписаться на собственное событие
-    if helpers.event_to_user?
-      redirect_to @event, alert: I18n.t('controllers.subscriptions.self_subscription')
-      return
-    end
-
     @new_subscription.user = current_user
 
-    if @new_subscription.valid? && @new_subscription.save
+    if @new_subscription.save
       # Если сохранилось, отправляем письмо
       # Пишем название класса, потом метода и передаём параметры
       # И доставляем методом .deliver_now (то есть в этом же потоке)
-      EventMailer.subscription(@event, @new_subscription).deliver_now
+  # EventMailer.subscription(@event, @new_subscription).deliver_now
       # Если сохранилась, редиректим на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
