@@ -2,20 +2,21 @@
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :name, class: "fw-bold" %>
+    <%= f.text_field :name, class: "col-12 mb-2 form-control p-1 pr-2" %>
   </div>
-  <br>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
-  <br>
 
   <div class="form-group">
-    <%= f.label :avatar %>
-    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-    <%= f.file_field :avatar %>
+    <%= f.label :email, class: "fw-bold" %>
+    <%= f.text_field :email, class: "col-12 mb-2 form-control p-1 pr-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :avatar, class: "fw-bold" %>
+    <div class="row mb-2">
+      <%= image_tag @user.avatar.thumb.url, class: "col-2 d-block" if @user.avatar? %>
+      <%= f.file_field :avatar, class: "col-9 form-control-file" %>
+    </div>
   </div>
 
   <div class="actions">

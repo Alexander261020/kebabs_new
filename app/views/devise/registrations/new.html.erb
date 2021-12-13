@@ -8,7 +8,8 @@
   <div class="p-2">
     <div class="field">
       <%= f.label :email, class: "fw-bold" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-12 mb-2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+        placeholder: "name@example.ru", class: "col-12 mb-2 form-control p-1 pr-2" %>
     </div>
 
     <div class="field">
@@ -16,12 +17,14 @@
         class: "fw-bold d-inline-block") + t('in_form.min_symbols', symbols: @minimum_password_length) %>
       <% if @minimum_password_length %>
       <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", class: "col-12 mb-2" %>
+      <%= f.password_field :password, autocomplete: "new-password",
+        placeholder: "your password", class: "col-12 mb-2 form-control p-1 pr-2" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation,  t('activerecord.attributes.user.password_confirmation'), class: "fw-bold" %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-12 mb-2" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",
+        placeholder: "password again", class: "col-12 mb-2 form-control p-1 pr-2" %>
     </div>
 
     <div class="actions">

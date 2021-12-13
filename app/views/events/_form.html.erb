@@ -2,23 +2,23 @@
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.label :title, class: "fw-bold" %>
+    <%= f.text_field :title, class: "col-12 mb-2 form-control p-1 pr-2" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: 'form-control' %>
+    <%= f.label :address, class: "fw-bold" %>
+    <%= f.text_field :address, class: "col-12 mb-2 form-control p-1 pr-2" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :datetime %>
-    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+    <%= f.label :datetime, class: "fw-bold" %>
+    <p><%= f.datetime_select :datetime, class: "col-12 mb-2 form-control p-1 pr-2" %></p>
   </div>
 
   <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.label :description, class: "fw-bold" %>
+    <%= f.text_area :description, class: "col-12 mb-2 form-control p-1 pr-2" %>
   </div>
 
   <div class="actions mt-2">

@@ -69,7 +69,6 @@ ru:
     few: "%{count} ошибки"
     many: "%{count} ошибок"
     in_form: "У Вас %{amount_error} в форме:"
-    already_exists: "Пользователь с таким email существует! Авторизируйтесь!"
 
   message:
     are_you_sure: "Вы уверены?"
