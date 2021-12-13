@@ -46,10 +46,10 @@ class Subscription < ActiveRecord::Base
   private
 
   def email_exist_to_event?
-    errors.add(:email, I18n.t('controllers.subscriptions.dubl_email')) if User.exists?(email: user_email)
+    errors.add(:user_email, :already_exists) if User.exists?(email: user_email)
   end
 
   def event_owner?
-    event.user != user || errors.add(:event, I18n.t('controllers.subscriptions.restrict_self_subscription'))
+    event.user != user || errors.add(:user_email, :restrict_self_subscription)
   end
 end

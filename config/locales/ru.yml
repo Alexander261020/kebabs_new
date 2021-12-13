@@ -7,7 +7,7 @@ ru:
       event: "Событие"
       comment: "Комментарий"
       subscription: "Подписка"
-      photo: 'Фотография'
+      photo: "Фотография"
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -27,7 +27,15 @@ ru:
       comment:
         body: "Текст сообщения"
       photo:
-        photo: 'Фотография'
+        photo: "Фотография"
+
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              already_exists: "уже зарегистрирован. Авторизируйтесь!"
+              restrict_self_subscription: "принадлежит Вам, на собственные события не подписываются!"
 
   controllers:
     events:
@@ -47,12 +55,10 @@ ru:
       created: "Вы подписаны на это событие"
       destroyed: "Участник отписан"
       error: "Подписка/отписка не сработала"
-      restrict_self_subscription: "На собственные события не подписываются!"
-      dubl_email: "Пользователь с таким email существует! Авторизируйтесь!"
     photos:
-      error: 'Что-то не так с фоткой'
-      created: 'Вы добавили фотографию к событию'
-      destroyed: 'Вы удалили фотку'
+      error: "Что-то не так с фоткой"
+      created: "Вы добавили фотографию к событию"
+      destroyed: "Вы удалили фотку"
 
   app:
     name: "Шашлыки"
@@ -63,6 +69,7 @@ ru:
     few: "%{count} ошибки"
     many: "%{count} ошибок"
     in_form: "У Вас %{amount_error} в форме:"
+    already_exists: "Пользователь с таким email существует! Авторизируйтесь!"
 
   message:
     are_you_sure: "Вы уверены?"
@@ -96,19 +103,19 @@ ru:
 
   event_mailer:
     comment:
-      title: 'Новый комментарий'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: "Новый комментарий"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
     subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: "Новая подписка"
+      name: "Имя"
+      email: "Email"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
 
   in_form:
     reg_new_user: "Регистрация нового пользователя"
