@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mailjet/mailjet-gem.git
+  revision: 675f75f5e402632f4d6a0ab017b680c752fa9ff9
+  specs:
+    mailjet (1.6.0)
+      activesupport (>= 3.1.0)
+      rack (>= 1.4.0)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -122,10 +131,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    mailjet (1.6.0)
-      activesupport (>= 3.1.0)
-      rack (>= 1.4.0)
-      rest-client (>= 2.0.0)
     marcel (1.0.2)
     method_source (1.0.0)
     mime-types (3.4.1)
@@ -236,7 +241,7 @@ DEPENDENCIES
   devise
   devise-i18n
   fog-aws
-  mailjet
+  mailjet!
   pg (~> 1.1)
   pony
   puma (~> 5.0)
