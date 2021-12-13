@@ -73,6 +73,7 @@ Rails.application.configure do
     # password: ENV['SMTP_PASSWORD'],
     user_name: 'iamdoctor597',
     password: 'G010288g*',
+
     authentication: 'plain',
     enabled_starttls_auto: true
   }
