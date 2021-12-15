@@ -74,6 +74,7 @@ Rails.application.configure do
     user_name: 'iamdoctor597',
     password: 'G010288g*',
 
+
     authentication: 'plain',
     enabled_starttls_auto: true
   }
