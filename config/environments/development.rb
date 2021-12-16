@@ -74,19 +74,7 @@ Rails.application.configure do
     user_name: 'iamdoctor597',
     password: 'G010288g*',
 
-
     authentication: 'plain',
     enabled_starttls_auto: true
   }
-
-=begin
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: '587',
-    user_name: 'iamdoctor597', # не используйте для тестов свои реальные ящики
-    password: '',
-    authentication: 'plain',
-    enable_starttls_auto: true
-  } 
-=end
 end

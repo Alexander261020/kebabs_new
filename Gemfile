@@ -14,7 +14,6 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
-# gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -25,5 +24,4 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
