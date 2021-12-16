@@ -50,6 +50,10 @@ class Subscription < ActiveRecord::Base
   end
 
   def event_owner?
-    event.user != user || errors.add(:user_email, :restrict_self_subscription)
+    unless event.user == user
+      true
+    else
+      errors.add(:user_email, :restrict_self_subscription)
+    end
   end
 end
