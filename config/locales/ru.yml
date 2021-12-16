@@ -117,6 +117,12 @@ ru:
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"
+    photo:
+      title: "Новая фотография"
+      author: "Добавил"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
 
   in_form:
     reg_new_user: "Регистрация нового пользователя"
