@@ -57,7 +57,6 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, image)
-
     # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
     # Исключаем автора из рассылки
