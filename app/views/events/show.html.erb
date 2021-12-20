@@ -38,21 +38,7 @@
     <div class="col-md-8">
       <%= content_tag 'h4', t("message.where_event") %>
       <div class="col-12 border border-dark">
-
- <!-- data-address="https://yandex.ru/maps/?text=< %= @event.address %>" -->
-        <div id="map" style="width: 100%; height: 250px;"></div>
-
-        <script type="text/javascript">
-          // Создает обработчик события window.onLoad
-          YMaps.jQuery(function () {
-              // Создает экземпляр карты и привязывает его к созданному контейнеру
-              var map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0]);
-              map.setCenter(new YMaps.GeoPoint(37.64, 55.76), 10);
-          })
-        </script>
-
-      <div id="YMapsID" style="width:100%;height:200px"></div>
-
+        <div id="map" style="width:100%;height:200px" data-address="<%= @event.address %>" ></div>
       </div>
 
       <div class="event-photos">
