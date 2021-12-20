@@ -93,6 +93,7 @@ ru:
     i_am_go: "Я пойду:"
     back: "Вернуться"
     events: "События"
+    where_event: "Место проведения события:"
 
   comments:
     comment:
