@@ -3,8 +3,8 @@
 <p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
-
 <%= image_tag @photo.photo.thumb.url %>
+<br>
 <%= t '.event' %>
 <h3><%= link_to @event.title, event_url(@event) %></h3>
 

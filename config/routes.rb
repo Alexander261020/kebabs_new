@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   root "events#index"
 
-  
   resources :events do
     resources :comments, only: [:create, :destroy]
       # вложенный ресурс подписок
@@ -14,5 +13,6 @@ Rails.application.routes.draw do
 
     post :show, on: :member
   end
+
   resources :users, only: [:show, :edit, :update]
 end
