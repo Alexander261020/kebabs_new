@@ -82,10 +82,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Базовый URL сайта для правильных ссылок в письмах
-  # ПРОПИСЫВАЙТЕ свой!
-  config.action_mailer.default_url_options = {host: 'megakebabs.herokuapp.com'}
-
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
 
@@ -97,11 +93,12 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
-
-  # config.action_mailer.delivery_method = :mailjet
+  config.action_mailer.delivery_method = :mailjet
+  # Базовый URL сайта для правильных ссылок в письмах
+  # ПРОПИСЫВАЙТЕ свой!
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
-  ActionMailer::Base.smtp_settings = {
+=begin   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
@@ -109,5 +106,6 @@ Rails.application.configure do
     :domain         => 'megakebabs.herokuapp.com',
     :authentication => :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp 
+=end
 end
