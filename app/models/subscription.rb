@@ -50,10 +50,6 @@ class Subscription < ActiveRecord::Base
   end
 
   def self_event?
-    if event.user == user
-      errors.add(:user_email, :restrict_self_subscription)
-    else
-      true
-    end
+    errors.add(:user_email, :restrict_self_subscription) if event.user == user
   end
 end
