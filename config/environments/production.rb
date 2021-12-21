@@ -100,6 +100,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailjet
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
+=begin 
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
@@ -108,7 +109,8 @@ Rails.application.configure do
     :domain         => 'megakebabs.herokuapp.com',
     :authentication => :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp 
+=end
 
 =begin 
   ActionMailer::Base.smtp_settings = {
