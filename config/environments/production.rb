@@ -106,7 +106,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'sandbox2aa9b017bec642d9bc81224175512e06.mailgun.org',
+    :domain         => 'megakebabs.herokuapp.com',
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
