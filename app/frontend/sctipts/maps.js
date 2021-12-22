@@ -1,4 +1,6 @@
-window.onload = function() {
+window.addEventListener("load", load_maps, false);
+
+function load_maps (){
   if (document.getElementById('map') !== null) {
     ymaps.ready(init);
     var myMap;
