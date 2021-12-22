@@ -1,15 +1,19 @@
 <div class="subscription mb-1">
-  <% if subscription.user.present? %>
-    <%= render partial: 'users/user_mini', object: subscription.user %>
-  <% else %>
-    <em><%= subscription.user_name %></em>
-  <% end %>
+  <div class="d-inline-block">
+    <% if subscription.user.present? %>
+      <%= render partial: 'users/user_mini', object: subscription.user %>
+    <% else %>
+      <em><%= subscription.user_name %></em>
+    <% end %>
+  </div>
   <% if current_user_can_edit?(subscription) %>
-    <%= link_to(
-            fa_icon,
-            event_subscription_path(subscription.event, subscription),
-            method: :delete,
-            data: {confirm: t('.destroy_confirm')}
-        ) %>
+    <div class="d-inline-block">
+      <%= button_to(
+          'x', event_subscription_path(subscription.event, subscription),
+          data: {confirm: t('.destroy_confirm')},
+          method: :delete,
+          class: 'border-0 bg-white'
+      ) %>
+    </div>
   <% end %>
 <br></div>

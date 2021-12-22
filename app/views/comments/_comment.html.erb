@@ -1,18 +1,22 @@
 <div class="buffer-bottom">
-  <p><%= comment.body %> |
-    <span>
+    <%= comment.body %> |
+    <div class="d-inline-block">
       <% if comment.user.present? %>
         <%= render partial: 'users/user_mini', object: comment.user %>
       <% else %>
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
-    </span>
+    </div>
     <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-      <%= link_to(
-            fa_icon, event_comment_path(comment.event, comment),
-            method: :delete, data: {confirm: t('.destroy_confirm')}
-        ) %>
+    
+    <div class="d-inline-block">
+      <%= button_to(
+          'x', event_comment_path(comment.event, comment),
+          method: :delete,
+          class: 'border-0 bg-white',
+          data: {confirm: t('.destroy_confirm')}
+      ) %>
+    </div>
     <% end %>
-  </p>
 </div>
