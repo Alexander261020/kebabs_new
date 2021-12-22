@@ -7,3 +7,7 @@ import "bootstrap/dist/js/bootstrap.js"
 
 import "../sctipts/maps.js"
 import "../sctipts/hide_window.js"
+
+// import "../sctipts/jquery-1.10.2.min.js"
+import "../sctipts/lightbox-2.6.min.js"
+import "../sctipts/modernizr.custom.js"

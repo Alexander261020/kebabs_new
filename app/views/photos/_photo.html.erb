@@ -1,23 +1,16 @@
-<div class="event-photo buffer-both">
-  <div class="d-inline-block">
-    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  </div>
+<!-- div class="d-inline-block border border-dark m-1 event-image" 
+  style="background-image: url(< %= photo.photo.thumb.url %>);" -->
 
-  <div class="d-inline-block">
-    Добавил <br><%= render partial: 'users/user_mini', object: photo.user %>
-  </div>
-</div>
+<!--%= content_tag :div, '', class: "d-inline-block border border-dark m-1 event-image",
+  style: "background-image: url(#{photo.photo.thumb.url};"
+%-->
 
-
-
-<!-- div class="d-inline-block border border-dark m-1" 
-  style="width: 100px; height: 70px; vertical-align: top;
-  background: grey;
-  background-image: url();
-  ">
-    < %= photo.photo.thumb.url %>
-    < %= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  <div class="d-inline-block">
-    Добавил <br>< %= render partial: 'users/user_mini', object: photo.user %>
-  </div>
-</div-->
+<a class="example-image-link" href="<%=photo.photo.url %>" data-lightbox="example-set">
+  <img class="example-image" src="<%=photo.photo.url %>" 
+    alt="Plants: image 1 0f 4 thumb" width="100" height="100"/>
+</a>
+<!--a class="example-image-link" href="img/demopage/image-3.jpg" data-lightbox="example-set" title="Click on the right side of the image to move forward."><img class="example-image" src="img/demopage/thumb-3.jpg" alt="Plants: image 1 0f 4 thumb" width="150" height="150"/></a>
+				<a class="example-image-link" href="img/demopage/image-4.jpg" data-lightbox="example-set" title="Or press the right arrow on your keyboard."><img class="example-image" src="img/demopage/thumb-4.jpg" alt="Plants: image 2 0f 4 thumb" width="150" height="150"/></a>
+				<a class="example-image-link" href="img/demopage/image-5.jpg" data-lightbox="example-set" title="The script preloads the next image in the set as you're viewing."><img class="example-image" src="img/demopage/thumb-5.jpg" alt="Plants: image 3 0f 4 thumb" width="150" height="150"/></a>
+				<a class="example-image-link" href="img/demopage/image-6.jpg" data-lightbox="example-set" title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="img/demopage/thumb-6.jpg" alt="Plants: image 4 0f 4 thumb" width="150" height="150"/></a-->
+    <!-- %= link_to image_tag(photo.photo.thumb.url), photo.photo.url % -->
