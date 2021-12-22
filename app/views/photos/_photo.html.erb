@@ -1,11 +1,23 @@
-<div class="d-inline-block border border-dark m-1" 
+<div class="event-photo buffer-both">
+  <div class="d-inline-block">
+    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  </div>
+
+  <div class="d-inline-block">
+    Добавил <br><%= render partial: 'users/user_mini', object: photo.user %>
+  </div>
+</div>
+
+
+
+<!-- div class="d-inline-block border border-dark m-1" 
   style="width: 100px; height: 70px; vertical-align: top;
   background: grey;
   background-image: url();
   ">
-    <%= photo.photo.thumb.url %>
-    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  <!-- div class="d-inline-block">
+    < %= photo.photo.thumb.url %>
+    < %= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  <div class="d-inline-block">
     Добавил <br>< %= render partial: 'users/user_mini', object: photo.user %>
-  </div-->
-</div>
+  </div>
+</div-->
