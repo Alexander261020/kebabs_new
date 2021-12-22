@@ -7,4 +7,3 @@ import "bootstrap/dist/js/bootstrap.js"
 
 import "../sctipts/maps.js"
 import "../sctipts/hide_window.js"
-import "../sctipts/window_load.js"
