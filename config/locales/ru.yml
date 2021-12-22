@@ -73,6 +73,7 @@ ru:
     in_form: "У Вас %{amount_error} в форме:"
 
   message:
+    total: "Всего:"
     are_you_sure: "Вы уверены?"
     change: "Изменить"
     change_password: "Сменить пароль"
@@ -94,6 +95,11 @@ ru:
     back: "Вернуться"
     events: "События"
     where_event: "Место проведения мероприятия:"
+    photo:
+      one: "%{count} фотография"
+      few: "%{count} фотографии"
+      many: "%{count} фотографий"
+      score: "Всего %{amount_photo}"
 
   comments:
     comment:

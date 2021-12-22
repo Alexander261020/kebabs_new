@@ -38,14 +38,16 @@
     <div class="col-md-8">
       <%= content_tag 'h4', t("message.where_event") %>
       <div class="col-12 border border-dark">
-        <div id="map" style="width:100%;height:200px" data-address="<%= @event.address %>" ></div>
+        <div id="map" clas="hmax-100" data-address="<%= @event.address %>" ></div>
       </div>
 
-      <div class="event-photos">
-        <div class="event-photos-gallery">
-          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-        </div>
-
+      <div class="event-photos mt-2">
+        <% if @event.photos.except.count > 0 %>
+          <%= t('message.photo.score', amount_photo: "#{t 'message.photo', count: @event.photos.except.count}") %>
+          <div class="event-photos-gallery m-2 overflow-hidden hmax-100">
+            <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+          </div>
+        <% end %>
         <div class="event-photo-form">
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
         </div>
