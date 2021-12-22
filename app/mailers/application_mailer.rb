@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'megakebabs.herokuapp.com'
+  default from: ENV['MY_MAIL']
   layout 'mailer'
 end
