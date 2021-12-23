@@ -9,7 +9,7 @@ class Subscription < ActiveRecord::Base
   with_options if: -> { user.present? } do
     # Для конкретного event_id один юзер может подписаться только один раз
     validates :user, uniqueness: { scope: :event_id }
-    validate :self_event?
+    validate :self_event_user
   end
 
   # если юзер на задан
@@ -18,7 +18,7 @@ class Subscription < ActiveRecord::Base
     validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
     # Или один email может использоваться только один раз (если анонимная подписка)
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :email_exist_to_event?
+    validate :email_already_exist
   end
 
 
@@ -45,11 +45,11 @@ class Subscription < ActiveRecord::Base
 
   private
 
-  def email_exist_to_event?
+  def email_already_exist
     errors.add(:user_email, :already_exists) if User.exists?(email: user_email)
   end
 
-  def self_event?
+  def self_event_user
     errors.add(:user_email, :restrict_self_subscription) if event.user == user
   end
 end
