@@ -1,6 +1,14 @@
-<% image_title = "Добавил #{render partial: 'users/user_mini', object: photo.user}
- link not working <a href='SOS'>sos</a>" %>
+<%
+  if current_user_can_edit?(photo)
+    destroy_photo = "<div class='d-inline-block'>
+      #{button_to('x', event_photo_path(photo.event, photo),
+        method: :delete, class: 'border-0 bg-white', data: {confirm: t('.destroy_confirm')})}
+    </div>"
+  end
+%>
+
+<% image_title = "Добавил #{render partial: 'users/user_mini', object: photo.user}" %>
 
 <%= link_to image_tag(photo.photo.thumb.url, width: '100', height: '100'), 
-  photo.photo.url, title: image_title, class: 'image-link m-1',
+  photo.photo.url, title: "#{image_title} #{destroy_photo}", class: 'image-link m-1',
   data: { toggle: 'lightbox', gallery: 'event-photos', lightbox: "set"} %>

@@ -7,7 +7,11 @@
     <% if request.path == user_path(user_mini) %>
       <%= user_mini.name %>
     <% else %>
-      <%= link_to user_mini.name, user_path(user_mini) %>
+      <%= link_to user_mini.name, user_path(user_mini),
+        # onclick добавиль только из за слайдера иначе не воспринемает ссыку 
+        # с destroy проблему так и не решил т.к. передаче через локацию не поддеживает запрос post
+        onclick: "document.location.href='#{user_path(user_mini)}'"
+        %>
     <% end %>
   </span>
 </span>
