@@ -1,4 +1,5 @@
-<% image_title = "Добавил #{render partial: 'users/user_mini', object: photo.user}" %>
+<% image_title = "Добавил #{render partial: 'users/user_mini', object: photo.user}
+ link not working <a href='SOS'>sos</a>" %>
 
 <%= link_to image_tag(photo.photo.thumb.url, width: '100', height: '100'), 
   photo.photo.url, title: image_title, class: 'image-link m-1',
