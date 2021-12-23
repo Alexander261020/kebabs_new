@@ -1,8 +1,8 @@
+/* Preload images */
 body:after {
-  content: url('../images/close.png') url('../images/loading.gif') url('../images/prev.png') url('../images/next.png');
+  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
   display: none;
 }
-
 
 .lightboxOverlay {
   position: absolute;
@@ -14,7 +14,6 @@ body:after {
   opacity: 0.8;
   display: none;
 }
-
 
 .lightbox {
   position: absolute;
@@ -29,6 +28,7 @@ body:after {
 .lightbox .lb-image {
   display: block;
   height: auto;
+  max-width: inherit;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -36,10 +36,9 @@ body:after {
   border-radius: 3px;
 }
 
-.lightbox a images {
+.lightbox a img {
   border: none;
 }
-
 
 .lb-outerContainer {
   position: relative;
@@ -61,31 +60,27 @@ body:after {
   clear: both;
 }
 
-
 .lb-container {
   padding: 4px;
 }
 
-
 .lb-loader {
   position: absolute;
   top: 43%;
-  left: 0%;
+  left: 0;
   height: 25%;
   width: 100%;
   text-align: center;
   line-height: 0;
 }
 
-
 .lb-cancel {
   display: block;
   width: 32px;
   height: 32px;
   margin: 0 auto;
-  background: url('../images/loading.gif') no-repeat;
+  background: url(../images/loading.gif) no-repeat;
 }
-
 
 .lb-nav {
   position: absolute;
@@ -96,44 +91,56 @@ body:after {
   z-index: 10;
 }
 
-
 .lb-container > .nav {
   left: 0;
 }
 
-
 .lb-nav a {
   outline: none;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
 }
 
-
 .lb-prev, .lb-next {
-  width: 49%;
   height: 100%;
   cursor: pointer;
-
   display: block;
 }
 
-
-.lb-prev {
+.lb-nav a.lb-prev {
+  width: 34%;
   left: 0;
   float: left;
+  background: url(../images/prev.png) left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
 }
 
-.lb-prev:hover {
-  background: url('../images/prev.png') left 48% no-repeat;
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
 
-.lb-next {
+.lb-nav a.lb-next {
+  width: 64%;
   right: 0;
   float: right;
+  background: url(../images/next.png) right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
 }
 
-.lb-next:hover {
-  background: url('../images/next.png') right 48% no-repeat;
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
-
 
 .lb-dataContainer {
   margin: 0 auto;
@@ -154,10 +161,9 @@ body:after {
   clear: both;
 }
 
-
 .lb-data {
   padding: 0 4px;
-  color: #bbbbbb;
+  color: #ccc;
 }
 
 .lb-data .lb-details {
@@ -186,11 +192,15 @@ body:after {
   float: right;
   width: 30px;
   height: 30px;
-  background: url('../images/close.png') top right no-repeat;
+  background: url(../images/close.png) top right no-repeat;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 .lb-data .lb-close:hover {
