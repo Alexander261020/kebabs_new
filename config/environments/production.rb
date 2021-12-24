@@ -89,23 +89,21 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Устанавливаем протокол, по которому отправлять (SMTP)
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :mailjet
+
   # Базовый URL сайта для правильных ссылок в письмах
-  # ПРОПИСЫВАЙТЕ свой!
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
-=begin   ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'megakebabs.herokuapp.com',
-    :authentication => :plain,
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    user_name: 'kebabs',
+    password: ENV['MY_MAIL'], 
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
-  ActionMailer::Base.delivery_method = :smtp 
-=end
 end
