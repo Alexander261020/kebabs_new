@@ -20,7 +20,16 @@ class PhotosController < ApplicationController
     end
   end
 
+  def get_destroy
+    destroy
+  end
+
   def destroy
+    # нужно будет удалить как разберусь с проблемой отпрвки ссылки через method post
+    # также удалить метод get_destroy и очистить маршруты
+    @photo = Photo.find(params[:id])
+    @event = @photo.event
+
     message = {notice: I18n.t('controllers.photos.destroyed')}
 
     # Проверяем, может ли пользователь удалить фотографию
