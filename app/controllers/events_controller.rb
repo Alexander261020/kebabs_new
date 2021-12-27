@@ -14,6 +14,31 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    require 'mailjet'
+Mailjet.configure do |config|
+config.api_key = '198779cd9053c6ed63f0590c533f3992'
+config.secret_key = '5fc8e21715761abec86b9ecbf32f1c44'
+config.api_version = "v3.1"
+end
+variable = Mailjet::Send.create(messages: [{
+  'From'=> {
+    'Email'=> '89227049120@mail.ru',
+    'Name'=> 'Alexandr'
+  },
+  'To'=> [
+    {
+      'Email'=> '89227049120@mail.ru',
+      'Name'=> 'Alexandr'
+    }
+  ],
+  'Subject'=> 'Greetings from Mailjet.',
+  'TextPart'=> 'My first Mailjet email',
+  'HTMLPart'=> '<h3>Dear passenger 1, welcome to <a href=\'https://www.mailjet.com/\'>Mailjet</a>!</h3><br />May the delivery force be with you!',
+  'CustomID' => 'AppGettingStartedTest'
+}]
+)
+p variable.attributes['Messages']
+
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
