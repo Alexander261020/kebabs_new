@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # нужно будет удалить как разберусь с проблемой отпрвки ссылки через method post
-  get '/photo/:id/destroy', to: 'photos#get_destroy'
   resources :photos
   resources :subscriptions
   resources :comments
@@ -12,7 +10,8 @@ Rails.application.routes.draw do
       # вложенный ресурс подписок
     resources :subscriptions, only: [:create, :destroy]
     resources :photos, only: [:create, :destroy]
-
+    # нужно будет удалить как разберусь с проблемой отпрвки ссылки через method post
+    get '/photos/:id/', to: 'photos#destroy'
     post :show, on: :member
   end
 
