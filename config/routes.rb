@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :subscriptions, only: [:create, :destroy]
     resources :photos, only: [:create, :destroy]
     # нужно будет удалить как разберусь с проблемой отпрвки ссылки через method post
-    # get '/photos/:id/', to: 'photos#destroy'
+    get '/photos/:id/', to: 'photos#destroy'
     post :show, on: :member
   end
 
