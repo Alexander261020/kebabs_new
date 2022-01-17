@@ -98,6 +98,7 @@ Rails.application.configure do
   # Базовый URL сайта для правильных ссылок в письмах
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
+=begin   
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
@@ -105,5 +106,6 @@ Rails.application.configure do
     password: ENV['MY_MAIL'], 
     authentication: 'plain',
     enable_starttls_auto: true
-  }
+  } 
+=end
 end
