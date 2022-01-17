@@ -1,5 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  # default from: ENV['MY_MAIL']
-  default from: 'kebabs.com'
+  default from: ENV['MY_MAIL']
   layout 'mailer'
 end
