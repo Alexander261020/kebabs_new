@@ -3,7 +3,7 @@
       link_to 'Удалить фоточку', event_photo_path(photo.event, photo),
         class: 'border-0 bg-white d-inline-block btn btn-danger text-dark',
         method: :delete,
-        data: {confirm: t('.destroy_confirm'), remote: true }
+        data: {confirm: t('.destroy_confirm')}
 end %>
 
 <% image_title = "Добавил #{render partial: 'users/user_mini', object: photo.user} #{button_destroy}" %>

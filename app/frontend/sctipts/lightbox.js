@@ -135,8 +135,8 @@
       function addToAlbum($link) {
         self.album.push({
           link: $link.attr('href'),
-          title: $link.attr('data-title') || $link.attr('title')
-        });
+          title: $link.attr('data-title') || $link.attr('title'),
+       });
       }
 
       // Support both data-lightbox attribute and rel attribute implementations
