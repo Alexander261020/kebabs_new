@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
+    @comments = @event.comments.order('created_at DESC').except(@new_comment)
   end
 
   # GET /events/new
