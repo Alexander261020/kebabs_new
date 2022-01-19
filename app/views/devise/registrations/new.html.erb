@@ -1,6 +1,6 @@
 <%= devise_error_messages! %>
 
-<div class="col-6 border border-dark rounded">
+<div class="col-12 col-sm-6 border border-dark rounded">
   <div class="bg-gainsboro p-2 rounded-top">
     <%= content_tag 'h2', t('in_form.reg_new_user') %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
