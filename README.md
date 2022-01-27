@@ -1,24 +1,13 @@
-# README
+# Шашлыки - приложение для создания событий
+Приложение с личным кабинетом для каждого пользователя. Помогает создать событие, назначить место встречи и время. Возможность оставить комментарии и фотограффии.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Что использовалось в приложении
+Rails 6.1
+Аутентификация с помощью Devise
+Работа с файлами в приложении с ипользованием AWS S3 Amason
+Работа с БД - ActiveRecord и PostgreSQL
+Безопасность паролей с помощью хеширования
+Отправка писем и полезных уведомлений помощью mailjet
+Локализация сделана rails-I18n
+Подключены Яндекс-карты, для наглядного отображения места события
+Для просмотра фотограффий подключена библиотека lightbox
